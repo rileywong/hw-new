@@ -1,10 +1,10 @@
 public class mergesort{
   
-  public static int[] merge(int[]a,int[]b){
+  public static String[] merge(String[]a,String[]b){
     int x=0;
     int y=0;
     
-    int[] fin = new int[a.length+b.length];
+    String[] fin = new int[a.length+b.length];
     /*
      while( x+y != fin.length){
      if(a[x] < b[y]){
@@ -38,8 +38,8 @@ public class mergesort{
     }
     
     else{
-      int[] a = new int[data.length/2];
-      int[] b = new int[data.length - a.length];
+      String[] a = new int[data.length/2];
+      String[] b = new int[data.length - a.length];
       for(int x = 0; x < a.length; x++){
         a[x] = data[x];
       }
@@ -55,9 +55,9 @@ public class mergesort{
   }
   
   public static void main(String[]args){
-    int[] a = {0,45};
-    int[] b = {1};
-    int[] c = {2};
+    String[] a = {0,45};
+    String[] b = {1};
+    String[] c = {2};
     System.out.println(b[0]);
     System.out.println(java.util.Arrays.toString(merge(b,c)));
     System.out.println(java.util.Arrays.toString(sort(a)));

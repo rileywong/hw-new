@@ -1,17 +1,15 @@
 import java.io.*;
 import java.util.*;
 
-class Maze
+class NightTour
 {
     public char[][] maze;
     public int h,w;
     public boolean solved = false;
-    final public char me='z';
     final public char wall=' ';
-    final public char path='#';
-    final public char exit='$';
-    public char travelled='1';
-    public Maze(String filename)
+    final public char path= '0';
+    public char travelled='A';
+    public NightTour(String filename)
     {
  maze = new char[80][25];
  h=0;
@@ -73,31 +71,45 @@ class Maze
  if (travelled == (x*y)) {
      solved = true;
  } else if (maze[x][y]==path){
-     delay(75);
+ 
+   try{   delay(75);
      System.out.println(this);
-     maze[x][y]=me;
-     solve(x+1,y);
-     if (!solved )
-  solve(x-1,y);
-     if (!solved )
-  solve(x,y+1);
-     if (!solved)
-  solve(x,y-1);
-     maze[x][y]=travelled;
+     maze[x][y] = (char)travelled;
      travelled++;
-    
+     solve(x+2,y+1);
+     if (!solved )
+  solve(x+2,y-1);
+     if (!solved )
+  solve(x+1,y-2);
+     if (!solved)
+  solve(x+1,y+2);
+     if (!solved)
+  solve(x-1,y-2);
+     if (!solved)
+  solve(x-1,y+2);
+     if (!solved)
+  solve(x-2,y+1);
+     if (!solved)
+  solve(x-2,y-1);
+     
+   
+   }
+ catch (Exception e){
+   
  }
- // otherwise it's a base case like hitting a wall, z, travelled
+ 
+
+    }
     }
 
 
     public static void main(String[] args)
     {
- Maze m = new Maze("maze.dat");
+ NightTour m = new NightTour("maze1.dat");
 
  System.out.println(" [2J");
  System.out.println(m);
- m.solve(10,3);
+ m.solve(2,3);
     }
 
 }
