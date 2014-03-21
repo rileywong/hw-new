@@ -34,23 +34,50 @@ public class MyLinkedList{
     }
 
     public String get(int i){
-	
+	Node temp1 = new Node(head.getData());
 	while(i != 0){
-	    i--;
+		temp1 = temp1.getNext();
+	    	i--;
 	}
-	return "s";
+	
+	return temp1;
     }
 
     public String set(int i, String s){
-	return "s";
+	Node fin = head;
+	Node temp1 = new Node(fin.getData());
+	Node temp2 = new Node(fin.getNext());
+	while(i!= 0){
+		temp1 = temp1.getNext();
+		temp2 = temp2.getNext();
+		i--;
+	}
+	temp1 = setNext(temp2);
+	temp2 = setNext(temp2.getNext());
+	return fin;
     }
 
     public int find(String s){
-	return 1;
+	Node fin = head;
+	int fin1 = -1;
+	for(int x = 0; x < this.length() ; x ++){
+		if(fin.data() == s){
+			fin1 = x;
+			return fin1;
+		}
+		temp = temp.getNext();
+	}
+	return fin1;
     }
 
     public int length(){
-	return 1;
+	Node fin = head;
+	int fin1 = 0;
+	while(fin.getData() != null){
+		fin1++;
+		fin = fin.getNext();
+	}
+	return fin1;
     }
 
     public String remove(int i){
