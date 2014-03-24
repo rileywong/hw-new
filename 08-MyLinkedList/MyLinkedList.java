@@ -2,14 +2,15 @@ public class MyLinkedList{
     private Node head;
 
     public MyLinkedList(){
-	head = null;
+	head = new Node("");
+	tail = head;
     }
 
     public void add(String s){
 	Node temp = new Node(s);
 	//	head = temp;
-	temp.setNext(head);
-	head = temp;
+	tail.setNext(temp);
+	tail = temp;
     }
 
     public String toString(){
