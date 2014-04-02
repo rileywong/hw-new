@@ -1,0 +1,19 @@
+public class myListIterator<E> implements Iterator<E>{
+    private Node currentNode;
+    
+    public myListIterator<E>(Node n){
+	currentNode = n;
+    }
+    
+    public booean hasNext(){
+	return false;
+    }
+    
+    public E next(){
+	return null;
+    }
+    
+    public void remove(){
+    }
+    
+}
