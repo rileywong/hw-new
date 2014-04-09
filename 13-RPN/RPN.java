@@ -31,7 +31,7 @@ public class RPN{
       else if(i.equals("/")){
         int tmp1 = Integer.parseInt(tmp.pop());
         int tmp2 = Integer.parseInt(tmp.pop());
-        int tmp3 = tmp1 + tmp2;
+        int tmp3 = tmp1 / tmp2;
         tmp.push(Integer.toString(tmp3));
         System.out.println(tmp);
       }
