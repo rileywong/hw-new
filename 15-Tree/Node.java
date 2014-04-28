@@ -8,7 +8,7 @@ public class Node{
 	right = null;
     }
     
-    public void setName(String s){
+    public void setData()(String s){
 	data = s;
     }
    
