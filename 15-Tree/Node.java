@@ -21,7 +21,7 @@ public class Node{
     }
    
     public String getData(){
-      
+      	return data;
     }
     
     public void setLeft(Node n){
