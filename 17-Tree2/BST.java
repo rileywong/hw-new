@@ -44,4 +44,6 @@ public class BST{
     return p;
   }
   
+    public Node delete(int x)
+  
 }
