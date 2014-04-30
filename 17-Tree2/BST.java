@@ -73,4 +73,6 @@ public class BST{
     }
        
   
+    public Node delete(int x)
+  
 }
